@@ -1,54 +1,57 @@
 public class Car {
-    private String nameOfCar;
-    private int numberOfCar;
-    private int yearOfCar;
-    private int ModelOfCar;
+    private String ModelOfCar;
+    private  String yearOfCar;
+    private double priceOfCar;
+    private double discount;
 
-    public Car(String nameOfCar, int numberOfCar, int yearOfCar, int ModelOfCar) {
-        this.nameOfCar = nameOfCar;
-        this.numberOfCar = numberOfCar;
-        this.yearOfCar = yearOfCar;
+
+    public Car (String ModelOfCar,  String yearOfCar,  double priceOfCar ) {
         this.ModelOfCar = ModelOfCar;
-
-    }
-
-    public String getNameOfCar() {
-
-        return nameOfCar;
-    }
-
-    public void setNameOfCar(String nameOfCar) {
-
-        this.nameOfCar = nameOfCar;
-    }
-
-    public int getNumberOfCar() {
-
-        return numberOfCar;
-    }
-
-    public void setNumberOfCar(int numberOfCar) {
-
-        this.numberOfCar = numberOfCar;
-    }
-
-    public int getYearOfCar() {
-        return yearOfCar;
-    }
-
-    public void setYearOfCar(int i) {
         this.yearOfCar = yearOfCar;
-    }
+        if (priceOfCar > 0){
+            this.priceOfCar = priceOfCar;;
+        }
 
-    public int getModelOfCar() {
+    }
+    public String getModelOfCar(){
+
         return ModelOfCar;
     }
 
-    public int setModelOfCar(int i) {
+    public  void setModelOfCar() {
         this.ModelOfCar = ModelOfCar;
-        return i;
+    }
+
+    public String getYearOfCar() {
+
+        return yearOfCar;
+    }
+
+    public  void setYearOfCar(String yearOfCar) {
+
+        this.yearOfCar = yearOfCar;
+    }
+
+    public double getPriceOfCar(){
+        return priceOfCar;
+    }
+    public void setPriceOfCar(double priceOfCar) {
+        this.priceOfCar = priceOfCar;
+    }
+
+    public double getDiscount() {
+        return discount = priceOfCar - (discount / 100);
+        }
+
+    public void setDiscount(double discount1) {
+        this.discount = discount1;
     }
 }
+
+
+
+
+
 
 
 
