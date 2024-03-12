@@ -27,3 +27,4 @@ class Account:
         if self.pin != pin:
             raise InvalidPinException("Invalid pin")
         return self.__balance
+
