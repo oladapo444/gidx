@@ -1,41 +1,47 @@
-public  class Account {
+import InsufficientFundException.insufficientFundException;
+
+public class Account {
     private String name;
-    private double balance;
 
-    public Account(String name ,double initialBalance) {
+    private String pin;
+
+    private int balance;
+
+    private int amount;
+
+    public Account(String name, int account_number, String pin) {
         this.name = name;
-        if (initialBalance > 0.0) {
-            this.balance = initialBalance;
-        }else {
-            System.out.println("initial balance must be greater than 0.0");
-        }
-    }
-    public void  deposit(double depositAmount){
-        if(depositAmount > 0.0) {
-            balance += depositAmount;
-        }else {
-            System.out.println("Deposit amount must be greater than 0.0");
-        }
-    }
-    public void withdraw(double withdrawerAmount) {
-        if (withdrawerAmount < balance) {
-            System.out.println("insufficient funds for withdrawal");
-        } else {
-            balance -= withdrawerAmount;
-        }
+        this.pin = pin;
+
     }
 
-    public  double getBalance() {
+    public void deposit(int amount) {
+        if (amount < 0)
+            try {
+                throw new InvalidAmountException("Invalid amount");
+            } catch (InvalidAmountException e) {
+                throw new RuntimeException(e);
+            }
+        balance += amount;
 
+    }
+
+    public void withdraw(int amount) {
+        if (balance < amount)
+            try {
+                throw new insufficientFundException("Insufficient fund");
+            } catch (insufficientFundException e) {
+                throw new RuntimeException(e);
+
+            }
+
+        balance -= amount;
+    }
+    public  void Check_balance(String pin, int account_number){
+        if
+}
+    public int getBalance() {
         return balance;
-    }
 
-    public void setName(String name) {
-
-        this.name = name;
-    }
-    public String getName(){
-        return name;
     }
 }
-
